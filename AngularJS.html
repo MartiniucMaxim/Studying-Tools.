@@ -1,0 +1,60 @@
+<html ng-app="userApp">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"> </script>
+<head>
+    <title>Test Exercise</title>
+</head>
+<body ng-controller="userController">
+   <h2>Formula Angajerii<h2>
+     <form ng-submit="submitUserForm()">
+       <fieldset>
+
+
+       <p>Name:<input type="text" name="firstname" ng-model="user.fisrtName" required></p>
+       <p>Prename:<input type="text" name="lastname" ng-model="user.lastName" required></p>
+       <p>Birthdate:<input type="date" ng-model="user.birthDate" required></p>
+       <br>
+           <p>Faculty</p>
+
+             <input type="radio" ng-model="myVar" value="user.chimie">Chimie <br>
+             <input type="radio" ng-model="myVar" value="user.matematica">Matematica <br>
+             <input type="radio" ng-model="myVar" value="user.informatica">Informatica <br>
+             <input type="radio" ng-model="myVar" value="user.biologie">Biologie <br>
+
+
+
+           <br>
+           <br>
+        <select ng-model="user.specialization" placeholder="">
+          <option value="Chimia Organica">Chimia organica
+          <option value="Matematica economica">Matematica economica
+          <option value="Informatica Aplicata">Informatica Aplicata
+
+        </select>
+        <input type="number" ng-if="salary">
+        <br>
+        <br>
+         <input type="submit" ng-model="button()">
+         <input type="reset" ng-model="reset()">
+     </fieldset>
+     </form>
+
+     <script>
+     var studentApp = angular.module('userApp',[]);
+
+     studentApp.controller("userController", function ($scope) {
+
+
+          $scope.originalUSer = {
+              firstName: '',
+              lastName: '',
+
+          };
+
+
+  });
+     </script>
+
+
+
+</body>
+</html>
